@@ -1,2 +1,3 @@
 # PigDice2.0
-yeah
+
+It's just a README.
