@@ -13,6 +13,7 @@ private:
     int m_gameScore;
 public:
     PDGame();
+    int getgameScore() const;
 private:
     void displayRules();
     void playGame();

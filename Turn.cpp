@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include "Turn.h"
+#include "PDGame.h"
+
 
 
 Turn::Turn() {
@@ -16,8 +18,7 @@ Turn::Turn() {
 
 void Turn::takeTurn() {
     m_turnCount++;
-    std::cout << "\nTurn " << m_turnCount << " - Current Score: " << "Error!";
-    // Needs access to m_gameScore in "whole" (PDGame)
+    std::cout << "\nTurn " << m_turnCount << " - Current Score: " << m_parentGame->getgameScore();
 
     while (m_turnOver == false) {
         std::cout << "\nWould you like to Roll or Hold? (r/h):  ";
@@ -64,4 +65,8 @@ void Turn::roll() {
         m_scoreThisTurn += m_myDie.getDieValue();
         std::cout << " - Current turn score: " << m_scoreThisTurn << std::endl;
     }
+}
+
+void Turn::setparentGame(PDGame* parentGame){
+    m_parentGame = parentGame;
 }

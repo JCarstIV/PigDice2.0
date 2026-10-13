@@ -9,6 +9,7 @@
 PDGame::PDGame() {
     m_gameOver = false;
     m_gameScore = 0;
+    m_myTurn.setparentGame(this);
     displayRules();
     playGame();
 }
@@ -37,4 +38,8 @@ void PDGame::playGame() {
     }
     std::cout << std::endl << "You won!" << std::endl;
     std::cout << "You finished with " << m_gameScore << " in " << m_myTurn.getTurnCount() << " turns.\n";
+}
+
+int PDGame::getgameScore() const {
+    return m_gameScore;
 }
